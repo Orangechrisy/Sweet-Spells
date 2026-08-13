@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dslxs3dtqu4xj"]
+
+[ext_resource type="Texture2D" uid="uid://4jedovgv6ppk" path="res://icon.svg" id="1_p6x3c"]
+[ext_resource type="Script" uid="uid://fddomwn5yp2" path="res://Cards/BaseInfo/card_data.gd" id="2_spvx2"]
+
+[resource]
+script = ExtResource("2_spvx2")
+name = &"Flour"
+image = ExtResource("1_p6x3c")
+description = &"Flour"
+card_type = 1
+metadata/_custom_type_script = "uid://fddomwn5yp2"

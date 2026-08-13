@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bwn06hpa147tb"]
+
+[ext_resource type="Script" uid="uid://dcmwwtoiohx77" path="res://Cards/CardEffects/spell_creation.gd" id="1_8bbky"]
+[ext_resource type="Texture2D" uid="uid://4jedovgv6ppk" path="res://icon.svg" id="2_pqixo"]
+[ext_resource type="Script" uid="uid://fddomwn5yp2" path="res://Cards/BaseInfo/card_data.gd" id="3_b353w"]
+
+[sub_resource type="Resource" id="Resource_fpac0"]
+script = ExtResource("1_8bbky")
+mana_cost = 2
+metadata/_custom_type_script = "uid://dcmwwtoiohx77"
+
+[resource]
+script = ExtResource("3_b353w")
+name = &"Creation"
+image = ExtResource("2_pqixo")
+description = &"Draw 2 Cards"
+card_type = 2
+effect = SubResource("Resource_fpac0")
+metadata/_custom_type_script = "uid://fddomwn5yp2"

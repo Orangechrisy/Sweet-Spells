@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cwyqxhf7dwsmj"]
+
+[ext_resource type="Script" uid="uid://lsmcdhehru4n" path="res://CardHolders/deck.gd" id="1_pmbb8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(70, 94)
+
+[node name="Deck" type="Node2D" unique_id=564279969]
+script = ExtResource("1_pmbb8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1339718860]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=874220476]
+position = Vector2(517, 293)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

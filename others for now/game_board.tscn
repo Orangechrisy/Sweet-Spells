@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://yhlw2qpc1vd0"]
+
+[ext_resource type="PackedScene" uid="uid://cwyqxhf7dwsmj" path="res://CardHolders/deck.tscn" id="1_xrvgy"]
+
+[node name="GameBoard" type="Node2D" unique_id=292597243]
+
+[node name="Deck" parent="." unique_id=564279969 instance=ExtResource("1_xrvgy")]

@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://yhlw2qpc1vd0"]
 
+[ext_resource type="Script" uid="uid://cqhmt8flqux2" path="res://others for now/game_board.gd" id="1_oetd0"]
 [ext_resource type="PackedScene" uid="uid://cwyqxhf7dwsmj" path="res://CardHolders/deck.tscn" id="1_qvdro"]
 [ext_resource type="PackedScene" uid="uid://d3s2i1poc30t6" path="res://CardHolders/player.tscn" id="2_gaq0h"]
+[ext_resource type="PackedScene" uid="uid://brvmqsuj66khi" path="res://CardHolders/discard.tscn" id="3_gaq0h"]
 
 [node name="GameBoard" type="Node2D" unique_id=292597243]
+script = ExtResource("1_oetd0")
 
 [node name="Deck" parent="." unique_id=564279969 instance=ExtResource("1_qvdro")]
 
+[node name="Discard" parent="." unique_id=686319583 instance=ExtResource("3_gaq0h")]
+position = Vector2(-2, 1)
+
 [node name="Player" parent="." unique_id=486298110 instance=ExtResource("2_gaq0h")]
-player_number = 0
+
+[node name="Player2" parent="." unique_id=1405687535 instance=ExtResource("2_gaq0h")]
+player_number = 1

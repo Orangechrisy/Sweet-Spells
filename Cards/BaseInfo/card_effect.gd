@@ -1,5 +1,4 @@
-class_name CardEffect
-extends Resource
+class_name CardEffect extends Resource
 
 @export var mana_cost: int = 0
 

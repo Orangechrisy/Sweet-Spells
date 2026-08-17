@@ -7,10 +7,11 @@ size = Vector2(650, 200)
 
 [node name="Player" type="Node2D" unique_id=486298110]
 script = ExtResource("1_nur3e")
-player_number = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=918661382]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=96650711]
 position = Vector2(600, 550)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

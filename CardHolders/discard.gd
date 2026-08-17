@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var deck: Array[CardBase]
+@export var discard: Array[CardBase]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		print("card drawn")
-		GameManager.current_player
+		print("card discarded")
 		get_viewport().set_input_as_handled()
 		# tho really this should be automatic

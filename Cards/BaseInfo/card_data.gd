@@ -1,5 +1,4 @@
-extends Resource
-class_name CardData
+class_name CardData extends Resource
 
 @export var name: StringName
 @export var image: Texture2D

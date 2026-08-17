@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://brvmqsuj66khi"]
+
+[ext_resource type="Script" uid="uid://01peimis73yl" path="res://CardHolders/discard.gd" id="1_1i7p6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_witla"]
+size = Vector2(70, 94)
+
+[node name="Discard" type="Node2D" unique_id=686319583]
+script = ExtResource("1_1i7p6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=103827770]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1881755502]
+position = Vector2(408, 293)
+shape = SubResource("RectangleShape2D_witla")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

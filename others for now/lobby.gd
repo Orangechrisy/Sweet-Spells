@@ -19,8 +19,8 @@ var players = {}
 # before the connection is made. It will be passed to every other peer.
 # For example, the value of "name" can be set to something the player
 # entered in a UI scene.
-var player_info = {"name": "Name"}
-
+var player_info = {"name": "Name", "table_pos": 0}
+var table_pos = 0
 var players_loaded = 0
 
 
@@ -89,6 +89,7 @@ func _on_player_connected(id):
 func _register_player(new_player_info):
 	var new_player_id = multiplayer.get_remote_sender_id()
 	players[new_player_id] = new_player_info
+	players[new_player_id]["table_pos"] = players.size() - 1
 	print("player registered")
 	player_connected.emit(new_player_id, new_player_info)
 

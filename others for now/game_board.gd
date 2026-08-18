@@ -9,5 +9,6 @@ func _ready():
 func start_game():
 	print("all peers in, game starting")
 	print(multiplayer.get_unique_id())
+	print("found at number: ", Lobby.players)
 	pass
 	# All peers are ready to receive RPCs in this scene.

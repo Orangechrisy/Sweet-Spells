@@ -28,4 +28,5 @@ func _on_join_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
+	print(Lobby.players)
 	Lobby.load_game.rpc("res://others for now/game_board.tscn")

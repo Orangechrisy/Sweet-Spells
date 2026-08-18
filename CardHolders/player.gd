@@ -6,12 +6,22 @@ class_name Player extends Node2D
 @export var points: int
 
 enum Pos {BOTTOM, TOP, LEFT, RIGHT}
+var players: Array[int] = []
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	print(Lobby.players)
+	players.resize(Lobby.players.size())
+	make_player_array()
 	set_player_area(player_number)
-	
+	print("found at number: ", Lobby.players[multiplayer.get_unique_id()]["table_pos"])
+
+func make_player_array():
+	for info in Lobby.players:
+		print("table pos: ", Lobby.players[info]["table_pos"])
+		players[Lobby.players[info]["table_pos"]] = info
+	print(players)
 
 func set_player_area(player_position):
 	match player_position:
@@ -40,3 +50,4 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 @rpc("any_peer", "call_local", "reliable")
 func player_area_clicked():
 	print("sender id: ", multiplayer.get_remote_sender_id())
+	print("my own id: ", multiplayer.get_unique_id())

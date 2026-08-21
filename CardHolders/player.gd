@@ -11,17 +11,12 @@ var players: Array[int] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# dont do this here, do it in game manager
-	players.resize(Lobby.players.size())
-	make_player_array()
-	set_player_area(player_number)
+	pass
 
-func make_player_array():
-	for info in Lobby.players:
-		players[Lobby.players[info]["table_pos"]] = info
-	print(players)
-
-func set_player_area(player_position):
+func set_player_area(player_position: int, num_players: int):
+	# determine where to place based on number of players
+	player_number = player_position
+	print(player_position, " | ", num_players)
 	match player_position:
 		Pos.BOTTOM:
 			$Area2D/CollisionShape2D.position.x = get_viewport().size.x / 2
@@ -34,7 +29,10 @@ func set_player_area(player_position):
 			$Area2D/CollisionShape2D.shape.size.x = get_viewport().size.x / 3
 			$Area2D/CollisionShape2D.shape.size.y = get_viewport().size.y /3
 		Pos.LEFT:
-			pass
+			$Area2D/CollisionShape2D.position.x = get_viewport().size.x / 6
+			$Area2D/CollisionShape2D.position.y = get_viewport().size.y / 2
+			$Area2D/CollisionShape2D.shape.size.x = get_viewport().size.x / 3
+			$Area2D/CollisionShape2D.shape.size.y = get_viewport().size.y /3
 		Pos.RIGHT:
 			pass
 

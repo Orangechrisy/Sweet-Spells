@@ -24,7 +24,6 @@ var table_pos = 0
 var players_loaded = 0
 
 
-
 func _ready():
 	multiplayer.peer_connected.connect(_on_player_connected)
 	multiplayer.peer_disconnected.connect(_on_player_disconnected)
@@ -66,6 +65,7 @@ func remove_multiplayer_peer():
 # do Lobby.load_game.rpc(filepath)
 @rpc("call_local", "reliable")
 func load_game(game_scene_path):
+	print("creating game: ", players)
 	get_tree().change_scene_to_file(game_scene_path)
 
 
@@ -88,9 +88,9 @@ func _on_player_connected(id):
 @rpc("any_peer", "reliable")
 func _register_player(new_player_info):
 	var new_player_id = multiplayer.get_remote_sender_id()
+	new_player_info["table_pos"] = players.size()
 	players[new_player_id] = new_player_info
-	players[new_player_id]["table_pos"] = players.size() - 1
-	print("player registered")
+	print("player registered, players now: ", players)
 	player_connected.emit(new_player_id, new_player_info)
 
 
